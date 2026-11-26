@@ -5,6 +5,7 @@
 from django.db import models
 import uuid 
 from django.core.validators import MinValueValidator,  MaxValueValidator
+from django.conf import settings
 
 class Check(models.Model):
 
@@ -36,3 +37,4 @@ class Check(models.Model):
     started_at=models.DateTimeField(null=True, blank=True)
     completed_at=  models.DateTimeField(null=True, blank=True)
     upload = models.FileField(blank=True, upload_to = 'uploads/')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE , related_name="checks")

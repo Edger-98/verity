@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', 
     'checks',
+    'accounts'
 ]
+
+AUTH_USER_MODEL = 'accounts.User' # variable name choosen fby django
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,6 +87,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+MEDIA_ROOT=BASE_DIR/ "media"
+
+MEDIA_URL='/media/'
 
 
 # Password validation
