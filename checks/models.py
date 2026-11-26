@@ -35,3 +35,4 @@ class Check(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     started_at=models.DateTimeField(null=True, blank=True)
     completed_at=  models.DateTimeField(null=True, blank=True)
+    upload = models.FileField(blank=True, upload_to = 'uploads/')
